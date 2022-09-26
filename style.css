@@ -1,28 +1,77 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
   font-family: "Source Sans Pro", sans-serif;
 }
-nav {
-  width: 100%;
-  background-color: black;
-  display: flex;
-  padding-top: 2px;
+li {
+  list-style: none;
 }
-.hamburger {
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: space-between;
+  background-color: black;
+  padding-right: 30px;
   overflow: hidden;
 }
-.navbar a {
+.nav-links a {
   color: white;
   text-decoration: none;
 }
-.navbar {
-  list-style: none;
+.menu {
   display: flex;
-  justify-content: space-around;
-  margin-left: auto;
-  width: 50%;
-  align-items: center;
+  font-size: 17px;
+  gap: 4em;
 }
+
 .logo-page {
-  margin-inline-start: 10px;
+  margin-inline-start: 15px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+  color: white;
+}
+@media (max-width: 768px) {
+  .menu {
+    display: block;
+    max-height: 0;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    font-size: 0;
+    transition: 0.5s all;
+    margin: 18px 0px;
+    line-height: 2;
+  }
+  .menu a {
+    display: block;
+    color: white;
+    text-align: right;
+    padding-right: 1.8em;
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 100%;
+    cursor: pointer;
+  }
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+    max-height: 400px;
+    font-size: 16px;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
 }
